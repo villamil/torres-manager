@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Login from "./scenes/Login";
 import Home from "./scenes/Home";
 import Units from "./scenes/Units";
+import UnitDetails from "./scenes/UnitDetails";
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
         <Route path="/units" exact>
           <Layout title="Departamentos">
             <Units />
+          </Layout>
+        </Route>
+        <Route path="/units/:id" exact>
+          <Layout title="Departamentos">
+            <UnitDetails />
           </Layout>
         </Route>
       </Switch>

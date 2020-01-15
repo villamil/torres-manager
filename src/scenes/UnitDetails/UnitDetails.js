@@ -1,10 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Graphs from "../../containers/Graphs";
-import Deposits from "../../containers/Deposits";
+import Button from "@material-ui/core/Button";
+import UnitInfo from "../../containers/UnitInfo";
 import UnitsList from "../../containers/UnitsList";
 
 const useStyles = makeStyles(theme => ({
@@ -22,25 +23,28 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Home() {
+export default function UnitDetails() {
+  let history = useHistory();
   const classes = useStyles();
+  function handleBackButton() {
+    history.goBack();
+  }
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={9} lg={9}>
-          <Paper className={classes.paper}>
-            <Graphs />
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={3} lg={3}>
-          <Paper className={classes.paper}>
-            <Deposits />
-          </Paper>
-        </Grid>
+      <Button onClick={handleBackButton}>Regresar</Button>
+
+      <Grid container spacing={2}>
         <Grid item xs={12} md={12} lg={12}>
           <Paper className={classes.paper}>
-            <UnitsList />
+            <UnitInfo number="101" section="A" />
           </Paper>
+        </Grid>
+        <Grid item xs={12} md={6} lg={6}>
+          <UnitsList />
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={6}>
+          <UnitsList />
         </Grid>
       </Grid>
     </Container>

@@ -54,7 +54,7 @@ export default function Graphs() {
   return (
     <React.Fragment>
       <Title>Pagos</Title>
-      <Line data={data} width={100} height={40} />
+      <Line data={data} width={100} height={20} />
     </React.Fragment>
   );
 }
