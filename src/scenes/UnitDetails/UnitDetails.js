@@ -6,7 +6,8 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import UnitInfo from "../../containers/UnitInfo";
-import UnitsList from "../../containers/UnitsList";
+import UnitMaintenanceDetailList from "../../containers/UnitMaintenanceDetailList";
+import UnitWaterDetailList from "../../containers/UnitWaterDetailList";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -40,11 +41,11 @@ export default function UnitDetails() {
           </Paper>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>
-          <UnitsList />
+          <UnitMaintenanceDetailList />
         </Grid>
 
         <Grid item xs={12} md={6} lg={6}>
-          <UnitsList />
+          <UnitWaterDetailList />
         </Grid>
       </Grid>
     </Container>
