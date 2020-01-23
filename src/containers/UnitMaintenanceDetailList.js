@@ -1,14 +1,16 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import MaterialTable from "material-table";
+import DetailTable from "../components/DetailTable";
 
 export default function UnitMaintenanceDetailList() {
   let history = useHistory();
   function openDetail(data) {
     history.push(`/units/${data.id}`);
   }
+  const MaintenanceTable = DetailTable(MaterialTable);
   return (
-    <MaterialTable
+    <MaintenanceTable
       columns={[
         { title: "Año", field: "year", editable: "never" },
         {
@@ -60,23 +62,6 @@ export default function UnitMaintenanceDetailList() {
         }
       ]}
       title="Mantenimiento"
-      localization={{
-        header: {
-          actions: "Acciones"
-        },
-        body: {
-          editTooltip: "Editar",
-          editRow: {
-            saveTooltip: "Guardar",
-            cancelTooltip: "Cancelar"
-          }
-        },
-        pagination: {
-          labelRowsSelect: "Filas",
-          labelDisplayedRows: "{from}-{to} de {count}"
-        }
-      }}
-      options={{ actionsColumnIndex: -1 }}
       editable={{
         onRowUpdate: (newData, oldData) => {
           console.log(newData, oldData);

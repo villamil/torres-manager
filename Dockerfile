@@ -14,3 +14,4 @@ RUN npm install react-scripts@3.0.1 -g --silent
 
 # start app
 CMD ["npm", "start"]
+# docker run -d -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm site-manager:dev

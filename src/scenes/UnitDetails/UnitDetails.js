@@ -40,11 +40,11 @@ export default function UnitDetails() {
             <UnitInfo number="101" section="A" />
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={12} lg={12}>
           <UnitMaintenanceDetailList />
         </Grid>
 
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={12} lg={12}>
           <UnitWaterDetailList />
         </Grid>
       </Grid>
